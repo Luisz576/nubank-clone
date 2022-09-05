@@ -1,0 +1,16 @@
+nubank/.dart_tool
+nubank/.idea
+nubank/android
+nubank/ios
+nubank/linux
+nubank/macos
+nubank/test
+nubank/web
+nubank/windows
+nubank/.gitignore
+nubank/.metadata
+nubank/.packages
+nubank/analysis_options.yaml
+nubank/nubank.iml
+nubank/pubspec.lock
+nubank/README.md
