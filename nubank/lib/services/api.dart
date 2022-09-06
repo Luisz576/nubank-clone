@@ -19,7 +19,7 @@ class Api{
         automaticDebitActive: true,
         cardLimit: 200,
         invoice: 55,
-        totalCash: 400
+        totalCash: 400.2
       );
     }
     return null;

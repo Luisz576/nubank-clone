@@ -34,6 +34,7 @@ class HomeAccountCashAndOptions extends StatelessWidget {
                     onPressed: (){},
                     icon: const Icon(Icons.arrow_forward_ios,
                       size: 18,
+                      color: AppColors.blackColor,
                     )
                   ),
                 ),

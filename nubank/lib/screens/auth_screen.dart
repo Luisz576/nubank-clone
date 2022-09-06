@@ -51,6 +51,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 onPressed: _tryAuth,
                 icon: const Icon(Icons.install_mobile_rounded,
                   color: AppColors.whiteColor,
+                  size: 32,
                 )
               )
             ),
