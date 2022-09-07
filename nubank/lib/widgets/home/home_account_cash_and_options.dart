@@ -3,6 +3,9 @@ import 'package:nubank/models/user_data.dart';
 import 'package:nubank/notifiers/simple_notifier.dart';
 import 'package:nubank/utils/app_colors.dart';
 import 'package:nubank/widgets/circle_icon_button_with_text.dart';
+import 'package:nubank/widgets/large_simple_button.dart';
+import 'package:nubank/widgets/new_box.dart';
+import 'package:nubank/widgets/secret_text.dart';
 
 class HomeAccountCashAndOptions extends StatelessWidget {
   final SimpleNotifier<UserData> userDataNotifier;
@@ -49,7 +52,7 @@ class HomeAccountCashAndOptions extends StatelessWidget {
                   valueListenable: userDataNotifier.listenable,
                   builder: (context, value, child) => Align(
                     alignment: Alignment.centerLeft,
-                    child: Text("R\$${value.totalCash.toStringAsPrecision(3)}",
+                    child: Text("R\$${value.totalCash.toStringAsFixed(2)}",
                       style: const TextStyle(
                         color: AppColors.blackColor,
                         fontSize: 16,
@@ -58,34 +61,10 @@ class HomeAccountCashAndOptions extends StatelessWidget {
                     ),
                   ),
                 )
-              : Row(
-                children: const [
-                  CircleAvatar(
-                    backgroundColor: AppColors.blackColor,
-                    radius: 5,
-                  ),
-                  SizedBox(
-                    width: 2,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: AppColors.blackColor,
-                    radius: 5,
-                  ),
-                  SizedBox(
-                    width: 2,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: AppColors.blackColor,
-                    radius: 5,
-                  ),
-                  SizedBox(
-                    width: 2,
-                  ),
-                  CircleAvatar(
-                    backgroundColor: AppColors.blackColor,
-                    radius: 5,
-                  ),
-                ],
+              : const SecretText(
+                color: AppColors.blackColor,
+                padding: 2,
+                radius: 5,
               ),
               const SizedBox(height: 30,),
             ],
@@ -94,6 +73,7 @@ class HomeAccountCashAndOptions extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height / 7,
           child: ListView(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             children: [
               const SizedBox(width: 20,),
@@ -212,40 +192,33 @@ class HomeAccountCashAndOptions extends StatelessWidget {
             ],
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Card(
-            color: AppColors.grayColor,
-            child: InkWell(
-              onTap: (){},
-              child: SizedBox(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(14),
-                  child: Row(
-                    children: const [
-                      Icon(Icons.phone_android_outlined,
-                        color: AppColors.blackColor,
-                        size: 24,
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text("Meus cartões",
-                        style: TextStyle(
-                          color: AppColors.blackColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold
-                        ),
-                      )
-                    ],
-                  )
-                ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: LargeSimpleButton(
+            icon: Icons.phone_android_outlined,
+            text: "Meus cartões",
+          )
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.1,
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            children: [
+              const SizedBox(width: 20,),
+              NewBox(
+                width: MediaQuery.of(context).size.width * 0.75,
+                text: "Até R\$X,00 de limite extra para realizar pedidos no app do <APP> com Nupay"
               ),
-            )
+              const SizedBox(width: 12,),
+              NewBox(
+                width: MediaQuery.of(context).size.width * 0.75,
+                text: "Até R\$X,00 de limite extra para realizar pedidos no app do <APP> com Nupay"
+              ),
+              const SizedBox(width: 20,),
+            ],
           ),
         ),
-        //TODO: news
       ],
     );
   }

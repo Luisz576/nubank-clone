@@ -8,6 +8,7 @@ import 'package:nubank/utils/app_colors.dart';
 import 'package:nubank/widgets/home/home_account_cash_and_options.dart';
 import 'package:nubank/widgets/home/home_app_bar.dart';
 import 'package:nubank/widgets/home/home_credit_card_info.dart';
+import 'package:nubank/widgets/large_simple_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -74,22 +75,44 @@ class _HomeScreenState extends State<HomeScreen> {
             ValueListenableBuilder<bool>(
               valueListenable: visibleNotifier.listenable,
               builder: (context, value, child) => Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   HomeAccountCashAndOptions(
                     userDataNotifier: userDataNotifier,
                     cashVisible: value,
                   ),
+                  const SizedBox(height: 20,),
                   const Divider(
                     color: AppColors.grayColor,
                     thickness: 3,
                   ),
+                  const SizedBox(height: 20,),
                   HomeCreditCardInfo(
                     userDataNotifier: userDataNotifier,
                     cashVisible: value
                   ),
+                  const SizedBox(height: 2,),
                   const Divider(
                     color: AppColors.grayColor,
                     thickness: 3,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: Text("Acompanhe também",
+                      style: TextStyle(
+                        color: AppColors.blackColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  const Padding(
+                    padding: EdgeInsets.all(20),
+                      child: LargeSimpleButton(
+                      icon: Icons.payments_outlined,
+                      text: "Assistente de pagamento",
+                    ),
                   ),
                 ],
               ),

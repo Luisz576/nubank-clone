@@ -36,13 +36,19 @@ class _HomeAppBarState extends State<HomeAppBar> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CircleAvatar(
-                      backgroundColor: AppColors.lightlightPurpleColor,
-                      radius: 30,
-                      child: Center(
-                        child: Icon(Icons.person_outline,
-                          color: AppColors.whiteColor,
-                          size: 30,
+                    InkWell(
+                      onTap: (){
+                        //TODO: open configs screen
+                      },
+                      hoverColor: null,
+                      child: const CircleAvatar(
+                        backgroundColor: AppColors.lightlightPurpleColor,
+                        radius: 30,
+                        child: Center(
+                          child: Icon(Icons.person_outline,
+                            color: AppColors.whiteColor,
+                            size: 30,
+                          ),
                         ),
                       ),
                     ),
