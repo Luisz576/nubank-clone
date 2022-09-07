@@ -25,7 +25,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
     return Container(
       color: AppColors.lightPurpleColor,
       child: Padding(
-        padding: const EdgeInsets.only(top: 20, bottom: 40),
+        padding: const EdgeInsets.only(top: 20, bottom: 50),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -53,7 +53,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                         fontWeight: FontWeight.bold,
                         fontSize: 18
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -80,16 +80,16 @@ class _HomeScreenState extends State<HomeScreen> {
                     cashVisible: value,
                   ),
                   const Divider(
-                    color: AppColors.lightOrangeColor,
-                    thickness: 5,
+                    color: AppColors.grayColor,
+                    thickness: 3,
                   ),
                   HomeCreditCardInfo(
                     userDataNotifier: userDataNotifier,
                     cashVisible: value
                   ),
                   const Divider(
-                    color: AppColors.lightOrangeColor,
-                    thickness: 5,
+                    color: AppColors.grayColor,
+                    thickness: 3,
                   ),
                 ],
               ),
