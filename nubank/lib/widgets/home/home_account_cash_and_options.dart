@@ -215,6 +215,11 @@ class HomeAccountCashAndOptions extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.75,
                 text: "Até R\$X,00 de limite extra para realizar pedidos no app do <APP> com Nupay"
               ),
+              const SizedBox(width: 12,),
+              NewBox(
+                width: MediaQuery.of(context).size.width * 0.75,
+                text: "Até R\$X,00 de limite extra para realizar pedidos no app do <APP> com Nupay"
+              ),
               const SizedBox(width: 20,),
             ],
           ),

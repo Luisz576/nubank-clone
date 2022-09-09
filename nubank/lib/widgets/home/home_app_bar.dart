@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/notifiers/simple_notifier.dart';
+import 'package:nubank/screens/configs_screen.dart';
 import 'package:nubank/services/api.dart';
 import 'package:nubank/utils/app_colors.dart';
 
@@ -38,7 +39,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
                   children: [
                     InkWell(
                       onTap: (){
-                        //TODO: open configs screen
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => const ConfigsScreen()
+                        ));
                       },
                       hoverColor: null,
                       child: const CircleAvatar(

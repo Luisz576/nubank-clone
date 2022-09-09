@@ -21,9 +21,16 @@ class _AuthScreenState extends State<AuthScreen> {
   _tryAuth(){
     Auth.tryAuth().then((result){
       if(result){
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
-          builder: (context) => const HomeScreen()
-        ), (route) => false);
+        Navigator.pushAndRemoveUntil(
+          context,
+          //TODO: change animation
+          PageRouteBuilder(
+            pageBuilder: (context, animation1, animation2) => const HomeScreen(),
+            transitionsBuilder: (context, animation, animation2, child) => FadeTransition(opacity: animation, child: child),
+            transitionDuration: const Duration(seconds: 2),
+          ),
+          (route) => false
+        );
       }else{
         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
           builder: (context) => const LoginScreen()
